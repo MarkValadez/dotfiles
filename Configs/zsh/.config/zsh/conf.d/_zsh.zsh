@@ -4,4 +4,4 @@
 
 alias zshrc="code $HOME/.config/zsh/.zshrc"
 alias ohmyzsh="cd $HOME/.oh-my-zsh"
-# alias clear="clear && zsh"
+

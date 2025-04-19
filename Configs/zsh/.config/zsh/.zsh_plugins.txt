@@ -17,7 +17,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
 
 # --- ohmyzsh
-getantidote/use-omz
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/git
@@ -36,4 +35,5 @@ zsh-users/zsh-syntax-highlighting
 
 # --- dir
 z-shell/zsh-eza
+fdellwing/zsh-bat
 

@@ -1,0 +1,57 @@
+# ~/.config/starship.toml
+
+# 1. Custom Devbox indicator
+[custom.devbox]
+command = 'echo "(devbox)"'
+when = '[[ -n $DEVBOX_SHELL_ENABLED ]]'
+style = "magenta"
+format = "[$output]($style)"
+
+# 2. Python venv (shows name of venv)
+[python]
+format = '[(\($virtualenv\))]($style)'
+style = "purple"
+disabled = false
+
+# 3. Username
+[username]
+style_user = "red"
+format = "[$user]($style)"
+
+# 4. Directory
+[directory]
+style = "green"
+truncation_length = 4
+truncation_symbol = "…/"
+format = "[$path]($style)"
+
+# 5. Git branch
+[git_branch]
+format = "[‹$branch›]($style)"
+style = "cyan"
+
+# 6. Git status
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "cyan"
+conflicted = "↵"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = " ?"
+stashed = " *"
+modified = " ⚑"
+staged = " ✔"
+renamed = " §"
+deleted = " ⍉"
+
+# 7. Prompt format
+format = """
+$custom.devbox$python$username$directory$git_branch$git_status
+$character
+"""
+
+# 8. Prompt character
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[✗](red)"

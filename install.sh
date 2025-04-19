@@ -13,7 +13,7 @@ sudo apt update -y || { echo "APT update failed!"; exit 1; }
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
 
 # install nix
-curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
@@ -29,6 +29,7 @@ nix-env -iA \
 	nixpkgs.neovim \
 	nixpkgs.ripgrep \
 	nixpkgs.tmux \
+	nixpkgs.tuckr \
 	nixpkgs.zsh \
     nixpkgs.gdal \
     nixpkgs.gnumake \
@@ -40,15 +41,17 @@ nix-env -iA \
     nixpkgs.wget \
     nixpkgs.xsel \
     nixpkgs.zoxide
-    
+
+tuckr set \* 
 
 # Install Devbox Shell Manager
-sudo curl -fsSL https://get.jetify.com/devbox | bash 
-sudo groupadd devbox  # Create the devbox group if it doesn't exist
-sudo usermod -aG devbox "$USER"  # Add your user to the devbox group
-newgrp devbox  # Refresh group membership
+nix profile install github:jetify-com/devbox/latest
+# sudo groupadd devbox  # Create the devbox group if it doesn't exist
+# sudo usermod -aG devbox "$USER"  # Add your user to the devbox group
+# newgrp devbox  # Refresh group membership
 
-
-# Install Tuckr
-cargo install -q --git https://github.com/RaphGL/Tuckr.git
-tuckr set \*
+# Add zsh as a login shell
+zsh_path=$(command -v zsh)
+if ! grep -Fxq "$zsh_path" /etc/shells; then
+    echo "$zsh_path" | sudo tee -a /etc/shells
+fi
