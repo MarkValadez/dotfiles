@@ -56,6 +56,6 @@ zsh_path=$(command -v zsh)
 grep -Fxq "$zsh_path" "/etc/shells" || { echo "$zsh_path" | sudo tee -a /etc/shells; }
 
 # Create .ssh dir
-[[ ! -d "$HOME/.ssh/" ]] && mkdir "$HOME/.ssh/"
+[[ -d "$HOME/.ssh/" ]] || mkdir "$HOME/.ssh/"
 
 zsh
