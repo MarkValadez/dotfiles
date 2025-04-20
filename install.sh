@@ -40,6 +40,7 @@ nix-env -iA \
     nixpkgs.postgresql_17_jit \
     nixpkgs.shellcheck \
     nixpkgs.starship \
+	nixpkgs.uv \
     nixpkgs.wget \
     nixpkgs.xsel \
     nixpkgs.zoxide

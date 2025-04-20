@@ -1,7 +1,10 @@
 # * Source 
 # Nix Env
-
 [[ -f $NIX ]] && source $NIX
+
+# Initialize completion system first
+autoload -Uz compinit
+compinit
 
 [[ -f $ANTIDOTE ]] && source $ANTIDOTE
 # Antidote Plugins
