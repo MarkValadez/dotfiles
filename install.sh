@@ -23,6 +23,7 @@ nix-env -iA \
 	nixpkgs.bat \
 	nixpkgs.cargo \
 	nixpkgs.direnv \
+	nixpkgs.eza \
 	nixpkgs.fzf \
 	nixpkgs.gcc \
 	nixpkgs.git \
