@@ -15,8 +15,9 @@ Dev environment setup. Uses Nix for packages and ZSH as the shell, with tooling 
 ## Quick start
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.config/dotfiles
-cd ~/.config/dotfiles
+mkdir "$HOME/.config"
+git clone https://github.com/MarkValadez/dotfiles.git ~/.config/dotfiles
+cd "$HOME/.config/dotfiles"
 ./install.sh
 ```
 
@@ -40,5 +41,4 @@ Configs/
 ```bash
 cd ~/.config/dotfiles
 git pull
-./install.sh
 ```
