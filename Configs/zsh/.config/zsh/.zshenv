@@ -10,9 +10,6 @@ export PATH=$PATH:$HOME/.cargo/bin  # cargo
 export CC="/usr/bin/gcc"
 export CXX="/usr/bin/g++"
 
-# Nix
-export NIX="$HOME/.nix-profile/etc/profile.d/nix.sh"
-
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH="$ZDOTDIR/.oh-my-zsh"
