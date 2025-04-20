@@ -22,6 +22,7 @@ nix-env -iA \
 	nixpkgs.antidote \
 	nixpkgs.bat \
 	nixpkgs.cargo \
+	nixpkgs.devbox \
 	nixpkgs.direnv \
 	nixpkgs.eza \
 	nixpkgs.fzf \
@@ -44,12 +45,6 @@ nix-env -iA \
     nixpkgs.zoxide
 
 tuckr set \* 
-
-# Install Devbox Shell Manager
-nix profile install github:jetify-com/devbox/latest
-# sudo groupadd devbox  # Create the devbox group if it doesn't exist
-# sudo usermod -aG devbox "$USER"  # Add your user to the devbox group
-# newgrp devbox  # Refresh group membership
 
 # Add zsh as a login shell
 zsh_path=$(command -v zsh)
