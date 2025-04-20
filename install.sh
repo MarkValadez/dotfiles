@@ -15,6 +15,7 @@ sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; }
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
+# source nix
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # install packages
@@ -45,14 +46,16 @@ nix-env -iA \
     nixpkgs.xsel \
     nixpkgs.zoxide
 
+# Remove .profile
+[[ -f $HOME/.profile ]] && rm "$HOME/.profile"
+
 tuckr set \* 
 
 # Add zsh as a login shell
 zsh_path=$(command -v zsh)
-if ! grep -Fxq "$zsh_path" /etc/shells; then
-    echo "$zsh_path" | sudo tee -a /etc/shells
-fi
+grep -Fxq "$zsh_path" "/etc/shells" || { echo "$zsh_path" | sudo tee -a /etc/shells; }
 
-if [ ! -d "$HOME/.ssh/" ]; then mkdir "$HOME/.ssh/" ; fi # added by Nix installer
+# Create .ssh dir
+[[ ! -d "$HOME/.ssh/" ]] && mkdir "$HOME/.ssh/"
 
 zsh
