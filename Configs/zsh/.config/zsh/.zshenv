@@ -12,7 +12,6 @@ export CXX="/usr/bin/g++"
 
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"
-export ZSH="$ZDOTDIR/.oh-my-zsh"
 export ZSH_CUSTOM="$ZDOTDIR/custom"
 
 # Antidote

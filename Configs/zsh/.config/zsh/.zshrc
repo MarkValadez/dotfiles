@@ -1,10 +1,9 @@
 # * Source 
 # Nix Env
 
-source $NIX
+[[ -f $NIX ]] && source $NIX
 
-source $ANTIDOTE
-
+[[ -f $ANTIDOTE ]] && source $ANTIDOTE
 # Antidote Plugins
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
