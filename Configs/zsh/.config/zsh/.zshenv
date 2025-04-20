@@ -1,3 +1,6 @@
+# Source Nix
+[[ -f $NIX ]] && source $NIX
+
 # Language
 export LANG=en_US.UTF-8
 
