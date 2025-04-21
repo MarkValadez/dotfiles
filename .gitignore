@@ -1,9 +1,6 @@
-# --- repos
-.antidote
-.oh-my-zsh
-
 # --- files
 .zcompdump*
 .histfile
 .zsh_history
 .zsh_plugins.zsh
+**/completions

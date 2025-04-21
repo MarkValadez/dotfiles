@@ -17,6 +17,7 @@ export CXX="/usr/bin/g++"
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_CUSTOM="$ZDOTDIR/custom"
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
 # Antidote
 export ANTIDOTE="$HOME/.nix-profile/share/antidote/antidote.zsh"
