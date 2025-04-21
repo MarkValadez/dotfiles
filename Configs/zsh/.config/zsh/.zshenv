@@ -4,6 +4,10 @@
 # Language
 export LANG=en_US.UTF-8
 
+# Editors
+
+export EDITOR="code"
+
 # Path
 export PATH=$HOME/bin:/usr/bin:$PATH  # bin & usr/bin
 export PATH=$PATH:$HOME/.local/bin  # local
@@ -13,6 +17,10 @@ export PATH=$PATH:$HOME/.cargo/bin  # cargo
 # Compilers
 export CC="/usr/bin/gcc"
 export CXX="/usr/bin/g++"
+
+# Brew
+export BREW="/home/linuxbrew"
+export DOTBREW="$BREW/.linuxbrew"
 
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"
@@ -33,7 +41,10 @@ export DOTHOOKS="$DOTFILES/Hooks"
 export DOTSECRETS="$DOTFILES/Secrets"
 
 # ZSH Theme
-export STARSHIP_CONFIG="$CONFIG/starship.toml"
+export OMP="$DOTBREW/opt/oh-my-posh"
+export OMPTHEMES="$OMP/themes"
+export STARSHIP_CONFIG="$CONFIG/starship/theme.toml"
+export POSH_THEME="$CONFIG/ohmyposh/theme.omp.json"
 
 # Pager settings
 export PAGER="bat"

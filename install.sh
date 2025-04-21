@@ -62,5 +62,11 @@ chsh -s "$(which zsh)"
 [[ -d "$HOME/.ssh/" ]] || mkdir "$HOME/.ssh/"
 
 # Create symlink to Windows Downloads dir
+[[ -f "./link-downloads.zsh" ]] && "./link-downloads.sh"
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+brew update && brew upgrade oh-my-posh
 
 zsh

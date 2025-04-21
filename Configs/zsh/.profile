@@ -36,3 +36,8 @@ if [ -f "$HOME/.local/bin/env" ]; then
 fi
 
 export PATH
+
+if [ -f "$HOME/.zshenv" ]; then
+    . "$HOME/.zshenv"
+fi
+

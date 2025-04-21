@@ -4,12 +4,7 @@
 setopt NO_BEEP            # No beep on error
 
 # Completion Settings
-zstyle ':plugin:ez-compinit' 'compstyle' ohmy # call 'compstyle -l' to see options
-
-
-# Fix prompt redraw issues
-# export PROMPT_EOL_MARK=''   # Remove % at partial lines
-# ZLE_RPROMPT_INDENT=0       # Remove extra space in right prompt
+zstyle ':plugin:ez-compinit' 'compstyle' gremlin # call 'compstyle -l' to see options
 
 [[ -f $ANTIDOTE ]] && source $ANTIDOTE
 # Antidote Plugins
@@ -30,5 +25,5 @@ fi
 # Source your static plugins file.
 source ${zsh_plugins}.zsh
 
-eval "$(direnv hook zsh)"
-eval "$(zoxide init zsh)"
+autoload -Uz compinit
+compinit
