@@ -52,9 +52,10 @@ nix-env -iA \
 
 tuckr set \* 
 
-# Add zsh as a login shell
+# Add zsh as a login shell & set as default
 zsh_path=$(command -v zsh)
 grep -Fxq "$zsh_path" "/etc/shells" || { echo "$zsh_path" | sudo tee -a /etc/shells; }
+chsh -s "$(which zsh)"
 
 # Create .ssh dir
 [[ -d "$HOME/.ssh/" ]] || mkdir "$HOME/.ssh/"
