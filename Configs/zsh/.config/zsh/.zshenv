@@ -7,6 +7,7 @@ export LANG=en_US.UTF-8
 # Path
 export PATH=$HOME/bin:/usr/bin:$PATH  # bin & usr/bin
 export PATH=$PATH:$HOME/.local/bin  # local
+export PATH="$HOME/.nix-profile/bin:$PATH"  # nix
 export PATH=$PATH:$HOME/.cargo/bin  # cargo
 
 # Compilers

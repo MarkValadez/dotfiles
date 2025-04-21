@@ -39,6 +39,7 @@ nix-env -iA \
     nixpkgs.gnupg \
     nixpkgs.llvmPackages_19.clang-tools \
     nixpkgs.postgresql_17_jit \
+	nixpkgs.jq \
     nixpkgs.shellcheck \
     nixpkgs.starship \
 	nixpkgs.uv \
