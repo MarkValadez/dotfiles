@@ -7,16 +7,16 @@ wintermi/zsh-oh-my-posh
 mattmc3/ez-compinit
 mattmc3/zephyr path:plugins/color
 mattmc3/zephyr path:plugins/confd
-mattmc3/zephyr path:plugins/environment
-mattmc3/zephyr path:plugins/history
-mattmc3/zephyr path:plugins/homebrew
+#mattmc3/zephyr path:plugins/environment
+#mattmc3/zephyr path:plugins/history
 
 
 # --- Load these last in this specific order
 zsh-users/zsh-completions kind:fpath path:src
+marlonrichert/zsh-autocomplete
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
-z-shell/F-Sy-H
+zsh-users/zsh-syntax-highlighting
 
 # --- Git Integration
 ohmyzsh/ohmyzsh path:plugins/gh

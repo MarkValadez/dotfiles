@@ -1,26 +1,34 @@
-# Source Nix
-[[ -f $NIX ]] && source $NIX
+# Nix
+[[ -f $NIX_SH ]] && source $NIX_SH
+export NIX_PROFILE="$HOME/.nix-profile"
+export NIX_BIN="$NIX_PROFILE/bin"
+
 
 # Language
 export LANG=en_US.UTF-8
 
 # Editors
-
 export EDITOR="code"
 
 # Path
-export PATH=$HOME/bin:/usr/bin:$PATH  # bin & usr/bin
-export PATH=$PATH:$HOME/.local/bin  # local
-export PATH="$HOME/.nix-profile/bin:$PATH"  # nix
-export PATH=$PATH:$HOME/.cargo/bin  # cargo
-
+TMP=$PATH
+export PATH="$HOME/.nix-profile/bin" 
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  # nix
+export PATH="$PATH:$HOME/bin:/usr/bin"  # bin & usr/bin
+export PATH="$PATH:$HOME/.local/bin"  # local
+export PATH="$PATH:$HOME/.cargo/bin"  # cargo
+export PATH="$PATH:$TMP"
 # Compilers
-export CC="/usr/bin/gcc"
-export CXX="/usr/bin/g++"
+export cc="$NIX_BIN/gcc"
+export cxx="$NIX_BIN/g++"
 
 # Brew
-export BREW="/home/linuxbrew"
-export DOTBREW="$BREW/.linuxbrew"
+[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}"
+export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
+export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+
 
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"

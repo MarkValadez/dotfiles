@@ -12,6 +12,8 @@ export ZDOTDIR="$HOME/.config/zsh"
 sudo apt update -y || { echo "APT update failed!"; exit 1; } 
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
 
+sudo apt install build-essential
+
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
@@ -38,7 +40,7 @@ nix-env -iA \
     nixpkgs.gdal \
     nixpkgs.gnumake \
     nixpkgs.gnupg \
-    nixpkgs.llvmPackages_19.clang-tools \
+    nixpkgs.clang \
     nixpkgs.postgresql_17_jit \
 	nixpkgs.jq \
     nixpkgs.shellcheck \

@@ -1,5 +1,5 @@
 # def essential env
-export NIX="$HOME/.nix-profile/etc/profile.d/nix.sh"
+export NIX_SH="$HOME/.nix-profile/etc/profile.d/nix.sh"
 export ZDOTDIR="$HOME/.config/zsh"
 
 # init zshenv in dotfiles
