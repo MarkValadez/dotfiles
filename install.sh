@@ -60,4 +60,6 @@ chsh -s "$(which zsh)"
 # Create .ssh dir
 [[ -d "$HOME/.ssh/" ]] || mkdir "$HOME/.ssh/"
 
+# Create symlink to Windows Downloads dir
+
 zsh
