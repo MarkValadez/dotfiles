@@ -22,7 +22,3 @@ fi
 
 # Source your static plugins file.
 source ${zsh_plugins}.zsh
-
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
-fi

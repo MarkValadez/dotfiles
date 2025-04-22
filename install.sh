@@ -12,7 +12,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 sudo apt update -y || { echo "APT update failed!"; exit 1; } 
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
 
-sudo apt install build-essential
+sudo apt install build-essential -y
 
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -29,7 +29,6 @@ nix-env -iA \
 	nixpkgs.direnv \
 	nixpkgs.eza \
 	nixpkgs.fzf \
-	nixpkgs.gcc \
 	nixpkgs.gh \
 	nixpkgs.git \
 	nixpkgs.neovim \
@@ -40,7 +39,6 @@ nix-env -iA \
     nixpkgs.gdal \
     nixpkgs.gnumake \
     nixpkgs.gnupg \
-    nixpkgs.clang \
     nixpkgs.postgresql_17_jit \
 	nixpkgs.jq \
     nixpkgs.shellcheck \
@@ -64,11 +62,18 @@ chsh -s "$(which zsh)"
 [[ -d "$HOME/.ssh/" ]] || mkdir "$HOME/.ssh/"
 
 # Create symlink to Windows Downloads dir
-[[ -f "./link-downloads.zsh" ]] && "./link-downloads.sh"
+[[ -f "./link-downloads.zsh" ]] && . "./link-downloads.sh"
 
 # Install Homebrew
+export NONINTERACTIVE=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
-brew update && brew upgrade oh-my-posh
+zsh -c "$(brew install jandedobbeleer/oh-my-posh/oh-my-posh)"
+
+# Generate Locales
+sudo locale-gen en_US.utf8
 
 zsh
+
+
+
+

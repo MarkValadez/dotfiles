@@ -1,7 +1,5 @@
 # --- Theme & Prompt 
-# wintermi/zsh-starship
-# mattmc3/zdotdir path:plugins/starship-ftl
-
+wintermi/zsh-oh-my-posh
 
 # Zephyr
 mattmc3/zephyr path:plugins/confd
