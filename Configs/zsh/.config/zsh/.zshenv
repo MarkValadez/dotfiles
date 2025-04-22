@@ -3,9 +3,8 @@
 export NIX_PROFILE="$HOME/.nix-profile"
 export NIX_BIN="$NIX_PROFILE/bin"
 
-
-# Language
-export LANG=en_US.UTF-8
+# Locales
+export LANG="en_US.utf8"
 
 # Editors
 export EDITOR="code"
@@ -29,11 +28,12 @@ export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
 export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
-
 # Zsh
 export ZDOTDIR="$HOME/.config/zsh"
 export ZSH_CUSTOM="$ZDOTDIR/custom"
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+export ZSH_COMPLETIONS="$ZSH_CACHE_DIR/completions"
+[[ -d "$ZSH_COMPLETIONS" ]] || mkdir -p "$ZSH_COMPLETIONS"
 
 # Antidote
 export ANTIDOTE="$HOME/.nix-profile/share/antidote/antidote.zsh"

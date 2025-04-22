@@ -2,9 +2,7 @@
 
 # ZSH Options
 setopt NO_BEEP            # No beep on error
-
-# Completion Settings
-zstyle ':plugin:ez-compinit' 'compstyle' gremlin # call 'compstyle -l' to see options
+# call 'compstyle -l' to see options
 
 [[ -f $ANTIDOTE ]] && source $ANTIDOTE
 # Antidote Plugins
@@ -25,5 +23,6 @@ fi
 # Source your static plugins file.
 source ${zsh_plugins}.zsh
 
-autoload -Uz compinit
-compinit
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
