@@ -48,7 +48,7 @@ nix-env -iA \
 	nixpkgs.uv \
     nixpkgs.wget \
     nixpkgs.xsel \
-    nixpkgs.zioxide
+    nixpkgs.zoxide
 
 # Remove .profile
 [[ -f $HOME/.profile ]] && rm "$HOME/.profile"
