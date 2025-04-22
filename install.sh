@@ -31,19 +31,20 @@ nix-env -iA \
 	nixpkgs.fzf \
 	nixpkgs.gh \
 	nixpkgs.git \
+	nixpkgs.jq \
 	nixpkgs.neovim \
+	nixpkgs.python312Full \
 	nixpkgs.ripgrep \
 	nixpkgs.tmux \
 	nixpkgs.tuckr \
+	nixpkgs.uv \
 	nixpkgs.zsh \
     nixpkgs.gdal \
     nixpkgs.gnumake \
     nixpkgs.gnupg \
     nixpkgs.postgresql_17_jit \
-	nixpkgs.jq \
     nixpkgs.shellcheck \
     nixpkgs.starship \
-	nixpkgs.uv \
     nixpkgs.wget \
     nixpkgs.xsel \
     nixpkgs.zoxide
