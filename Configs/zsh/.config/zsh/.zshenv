@@ -17,6 +17,7 @@ export PATH="$PATH:$HOME/bin:/usr/bin"  # bin & usr/bin
 export PATH="$PATH:$HOME/.local/bin"  # local
 export PATH="$PATH:$HOME/.cargo/bin"  # cargo
 export PATH="$PATH:$TMP"
+
 # Compilers
 export cc="$NIX_BIN/gcc"
 export cxx="$NIX_BIN/g++"
@@ -80,3 +81,4 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 export HISTCONTROL=ignoreboth:erasedups
+export HISTFILE="$ZSH_CACHE_DIR/zsh_history"

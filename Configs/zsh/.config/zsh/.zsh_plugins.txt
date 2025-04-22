@@ -17,6 +17,9 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
 
+# --- Personal
+MarkValadez/dotfiles path:plugins/devbox
+
 
 # --- Git Integration
 ohmyzsh/ohmyzsh path:lib

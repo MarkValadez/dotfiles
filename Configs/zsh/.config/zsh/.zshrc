@@ -31,3 +31,7 @@ zstyle :omz:plugins:ssh-agent identities id_github
 zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent lazy yes
 zstyle :omz:plugins:ssh-agent lifetime 1h
+
+# 
+
+compinit -d "$ZSH_CACHE_DIR/zcompcache"
