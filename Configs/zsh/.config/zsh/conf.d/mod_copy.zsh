@@ -11,6 +11,12 @@ function cpwd() {
     pwd | tee >(pbcopy)
 }
 
+function cpf {
+  [[ "$#" != 1 ]] && return 1
+  local file_to_copy=$1
+  cat $file_to_copy | pbcopy
+}
+
 # * (WSL) Copy from symlynked C:/Downloads -> ~/Downloads
 function cpfromdl() {
     if [ -z "$1" ]; then
