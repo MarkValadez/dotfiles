@@ -2,6 +2,7 @@
 
 # ZSH Options
 setopt NO_BEEP            # No beep on error
+
 # call 'compstyle -l' to see options
 
 [[ -f $ANTIDOTE ]] && source $ANTIDOTE
@@ -22,3 +23,11 @@ fi
 
 # Source your static plugins file.
 source ${zsh_plugins}.zsh
+
+#zstyles
+
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent identities id_github
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent lifetime 1h
