@@ -11,8 +11,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Update and upgrade apt packages
 sudo apt update -y || { echo "APT update failed!"; exit 1; } 
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
-
-sudo apt install build-essential -y
+sudo apt install build-essential python3-gi python3-gi-cairo gir1.2-secret-1 -y
 
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -24,7 +23,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 nix-env -iA \
 	nixpkgs.antidote \
 	nixpkgs.bat \
-	nixpkgs.cargo \
+	nixpkgs.rustup \
 	nixpkgs.devbox \
 	nixpkgs.direnv \
 	nixpkgs.eza \
@@ -70,8 +69,12 @@ export NONINTERACTIVE=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 zsh -c "$(brew install jandedobbeleer/oh-my-posh/oh-my-posh)"
 
+# Install Azure Dev CLI
+curl -fsSL https://aka.ms/install-azd.sh | bash
+
 # Generate Locales
 sudo locale-gen en_US.utf8
+rustup default stable
 
 zsh
 

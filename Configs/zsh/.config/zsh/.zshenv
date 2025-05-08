@@ -39,6 +39,9 @@ export ZSH_COMPLETIONS="$ZSH_CACHE_DIR/completions"
 # Antidote
 export ANTIDOTE="$HOME/.nix-profile/share/antidote/antidote.zsh"
 
+# Azure Dev CLI
+export AZURE_DEV_COLLECT_TELEMETRY="no"
+
 # Utils
 export FZF_BASE="$HOME/.fzf"
 
