@@ -11,7 +11,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Update and upgrade apt packages
 sudo apt update -y || { echo "APT update failed!"; exit 1; } 
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
-sudo apt install build-essential python3-gi python3-gi-cairo gir1.2-secret-1 -y
+sudo apt install build-essential libdbus-1-dev pkg-config gnome-keyring dbus-user-session -y
 
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -46,7 +46,9 @@ nix-env -iA \
     nixpkgs.starship \
     nixpkgs.wget \
     nixpkgs.xsel \
-    nixpkgs.zoxide
+    nixpkgs.zoxide \
+	nixpkgs.gobject-introspection \
+	nixpkgs.gtk3
 
 # Remove .profile
 [[ -f $HOME/.profile ]] && rm "$HOME/.profile"

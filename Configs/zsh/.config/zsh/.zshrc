@@ -35,3 +35,16 @@ zstyle :omz:plugins:ssh-agent lifetime 1h
 # 
 
 compinit -d "$ZSH_CACHE_DIR/zcompcache"
+
+# Only in interactive WSL shells
+if [[ -o interactive ]] && grep -qi microsoft /proc/version; then
+
+  # Start keyring daemon if not already running (match full cmdline)
+  if ! pgrep -u "$(id -u)" -f gnome-keyring-daemon >/dev/null; then
+    gnome-keyring-daemon \
+      --daemonize --login --components=secrets,ssh >/dev/null
+  fi
+
+  # Point SSH and SecretService clients at the new socket
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+fi
