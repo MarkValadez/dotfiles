@@ -46,9 +46,7 @@ nix-env -iA \
     nixpkgs.starship \
     nixpkgs.wget \
     nixpkgs.xsel \
-    nixpkgs.zoxide \
-	nixpkgs.gobject-introspection \
-	nixpkgs.gtk3
+    nixpkgs.zoxide 
 
 # Remove .profile
 [[ -f $HOME/.profile ]] && rm "$HOME/.profile"
@@ -67,7 +65,7 @@ chsh -s "$(which zsh)"
 [[ -f "./link-downloads.zsh" ]] && . "./link-downloads.sh"
 
 # Install Homebrew
-export NONINTERACTIVE=1
+NONINTERACTIVE=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 zsh -c "$(brew install jandedobbeleer/oh-my-posh/oh-my-posh)"
 
