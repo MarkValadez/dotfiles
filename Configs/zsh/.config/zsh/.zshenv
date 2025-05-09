@@ -9,6 +9,9 @@ export LANG="en_US.utf8"
 # Editors
 export EDITOR="code"
 
+# Disable Telemetry
+export AZURE_DEV_COLLECT_TELEMETRY="no"
+
 # Path
 TMP=$PATH
 export PATH="$HOME/.nix-profile/bin" 
