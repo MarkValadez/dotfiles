@@ -65,7 +65,7 @@ chsh -s "$(which zsh)"
 [[ -f "./link-downloads.zsh" ]] && . "./link-downloads.sh"
 
 # Install Homebrew
-NONINTERACTIVE=1
+export NONINTERACTIVE=1
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 zsh -c "$(brew install jandedobbeleer/oh-my-posh/oh-my-posh)"
 
