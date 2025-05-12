@@ -2,4 +2,4 @@
 bash_path="/usr/bin/bash"
 load_dotenv=true
 hide_env_diff=true
-warn_timeout = "1m"
+warn_timeout = "0"
