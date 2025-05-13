@@ -5,6 +5,7 @@
 export ZPROFILE_RUN=1
 
 # Launch a D-BUS session
+# SOURCE: https://www.reddit.com/r/bashonubuntuonwindows/comments/101fn09/do_this_if_you_are_having_problems_with_keyrings/
 dbus-update-activation-environment --all > /dev/null 2>&1
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
   
