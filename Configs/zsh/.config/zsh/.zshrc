@@ -1,9 +1,7 @@
 # * Source
 
-# Configure Dbus
-# ! Do not change
-# SOURCE: https://www.reddit.com/r/bashonubuntuonwindows/comments/101fn09/do_this_if_you_are_having_problems_with_keyrings/
-dbus-update-activation-environment --all > /dev/null 2>&1
+# source .zprofile
+source "$HOME/.zprofile"
 
 # ZSH Options
 setopt NO_BEEP            # No beep on error
