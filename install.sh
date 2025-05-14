@@ -11,7 +11,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 # Update and upgrade apt packages
 sudo apt update -y || { echo "APT update failed!"; exit 1; } 
 sudo apt upgrade -y || { echo "APT upgrade failed!"; exit 1; } 
-sudo apt install build-essential libdbus-1-dev pkg-config gnome-keyring dbus-user-session -y
+sudo apt install build-essential libdbus-1-dev pkg-config gnome-keyring dbus-user-session seahorse -y
 sudo apt-get install glib-2.0 -y
 
 # install nix
