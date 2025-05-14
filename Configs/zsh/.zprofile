@@ -1,14 +1,16 @@
-# Stop if .zprofile has already run in this process‐tree
+# 1) Prevent double-sourcing
 [[ -n "${ZPROFILE_RUN-}" ]] && return
-
-# Mark if ran already
 export ZPROFILE_RUN=1
 
-# Launch a D-BUS session
-# SOURCE: https://www.reddit.com/r/bashonubuntuonwindows/comments/101fn09/do_this_if_you_are_having_problems_with_keyrings/
-dbus-update-activation-environment --all > /dev/null 2>&1
-eval "$(dbus-launch --sh-syntax --exit-with-session)"
-  
-ensure the bus daemon dies if the shell is killed or exits
-trap 'kill -- $DBUS_SESSION_BUS_PID' EXIT INT TERM
+# 2) Ensure there’s a D-Bus session
+if [[ -z $DBUS_SESSION_BUS_ADDRESS ]]; then
+  eval "$(dbus-launch --sh-syntax --exit-with-session)"
+  trap 'kill -- "$DBUS_SESSION_BUS_PID"' EXIT INT TERM
+fi
 
+# 3) Export the bus into child processes
+dbus-update-activation-environment --all >/dev/null 2>&1
+
+# 4) Start (or unlock) GNOME Keyring *and* capture its sockets
+eval "$(gnome-keyring-daemon --start --components=secrets,pkcs11,ssh)"
+export SSH_AUTH_SOCK GNOME_KEYRING_CONTROL
