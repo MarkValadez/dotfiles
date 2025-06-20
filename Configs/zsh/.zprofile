@@ -12,5 +12,7 @@ fi
 dbus-update-activation-environment --all >/dev/null 2>&1
 
 # 4) Start (or unlock) GNOME Keyring *and* capture its sockets
-eval "$(gnome-keyring-daemon --start --components=secrets,pkcs11,ssh)"
-export SSH_AUTH_SOCK GNOME_KEYRING_CONTROL
+if [ -n "$DESKTOP_SESSION" ];then
+  eval "$(gnome-keyring-daemon --start --components=secrets,pkcs11,ssh)"
+  export SSH_AUTH_SOCK GNOME_KEYRING_CONTROL
+fi
