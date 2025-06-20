@@ -32,6 +32,7 @@ nix-env -iA \
 	nixpkgs.gh \
 	nixpkgs.git \
 	nixpkgs.jq \
+ 	nixpkgs.libgccjit \
 	nixpkgs.neovim \
 	nixpkgs.python312Full \
 	nixpkgs.ripgrep \
