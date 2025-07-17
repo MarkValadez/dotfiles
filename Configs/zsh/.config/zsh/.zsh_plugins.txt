@@ -19,6 +19,7 @@ zsh-users/zsh-syntax-highlighting
 
 # --- Personal
 MarkValadez/dotfiles path:plugins/devbox
+MarkValadez/dotfiles path:plugins/astronomer
 
 
 # --- Git Integration
