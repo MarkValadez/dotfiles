@@ -10,7 +10,7 @@ fi
 if [[ ! -f "$ZSH_CACHE_DIR/completions/_devbox" ]]; then
   typeset -g -A _comps
   autoload -Uz _devbox
-  _comps[gh]=_devbox
+  _comps[devbox]=_devbox
 fi
 
 devbox completion zsh > "$ZSH_CACHE_DIR/completions/_devbox" &|
