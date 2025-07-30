@@ -13,13 +13,13 @@ export EDITOR="code"
 export AZURE_DEV_COLLECT_TELEMETRY="no"
 
 # Path
-TMP=$PATH
-export PATH="$HOME/.nix-profile/bin" 
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  # nix
-export PATH="$PATH:$HOME/bin:/usr/bin"  # bin & usr/bin
-export PATH="$PATH:$HOME/.local/bin"  # local
-export PATH="$PATH:$HOME/.cargo/bin"  # cargo
-export PATH="$PATH:$TMP"
+# TMP=$PATH
+# export PATH="$HOME/.nix-profile/bin" 
+# export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"  # nix
+# export PATH="$PATH:$HOME/bin:/usr/bin"  # bin & usr/bin
+# export PATH="$PATH:$HOME/.local/bin"  # local
+# export PATH="$PATH:$HOME/.cargo/bin"  # cargo
+# export PATH="$PATH:$TMP"
 
 # Compilers
 export cc="$NIX_BIN/gcc"
