@@ -5,7 +5,7 @@ wintermi/zsh-oh-my-posh
 mattmc3/zephyr path:plugins/confd
 #mattmc3/zephyr path:plugins/environment
 mattmc3/zephyr path:plugins/history
-mattmc3/zdotdir path:plugins/xdg
+mattmc3/zsh_custom path:plugins/xdg
 
 # --- Core & Framework
 mattmc3/ez-compinit
