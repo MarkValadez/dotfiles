@@ -13,4 +13,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_devbox" ]]; then
   _comps[devbox]=_devbox
 fi
 
-devbox completion zsh > "$ZSH_CACHE_DIR/completions/_devbox" &|
+devbox completion zsh >| "$ZSH_CACHE_DIR/completions/_devbox" &|
