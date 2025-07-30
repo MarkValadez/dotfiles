@@ -12,4 +12,4 @@ if [[ ! -f "$ZSH_CACHE_DIR/completions/_astro" ]]; then
 fi
 
 # (Re)generate completion spec in the cache dir in case astro was upgraded.
-astro completion zsh > "$ZSH_CACHE_DIR/completions/_astro" &|
+astro completion zsh >| "$ZSH_CACHE_DIR/completions/_astro" &|
