@@ -23,11 +23,11 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Source Nix profile if installed
-if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-    # shellcheck source=/dev/null
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-fi
+# # Source Nix profile if installed
+# if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+#    # shellcheck source=/dev/null
+#    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+# fi
 
 # Source ~/.local/bin/env if it exists
 if [ -f "$HOME/.local/bin/env" ]; then
