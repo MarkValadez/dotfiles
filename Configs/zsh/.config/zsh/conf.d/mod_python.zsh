@@ -12,7 +12,7 @@ alias uvs="uv sync"
 alias uvi="uv pip install"
 
 # Python environment settings
-export PYTHONDONTWRITEBYTECODE=1
+# export PYTHONDONTWRITEBYTECODE=1
 export PYTHONUNBUFFERED=1
 
 # --- Functions
@@ -64,7 +64,7 @@ function uvnew() {
     echo "Created new Python project with UV virtual environment: $project_name"
 }
 
-uvadd() {
+function uvadd() {
     if [[ ! -f "requirements.in" ]]; then
         echo "No requirements.in found. Creating one..."
         touch requirements.in
@@ -82,7 +82,7 @@ uvadd() {
     uvup && uvs
 }
 
-uvrm() {
+function uvrm() {
     if [[ ! -f "requirements.in" ]]; then
         echo "No requirements.in found."
         return 1
